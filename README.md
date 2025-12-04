@@ -8,8 +8,8 @@ Sint wants to deliver 10 million packages to households in the Netherlands, usin
 
 - Atom Piet: Only indivisable (prime) numbers
 - Professor Piet: only numbers that end with a three
-- Average Piet: only numbers with average decimal of 5
-- Drunk Piet: only numbers with consecutive repeated decimals
+- Average Piet: only numbers with an average digit of 5
+- Drunk Piet: only numbers with consecutive repeated digits
 - Astrology Piet: only numbers that do not have a 9 in them
 - Lazy Piet: everything else, but he dumps the presents in the canal
 

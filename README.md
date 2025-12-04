@@ -4,7 +4,7 @@ The aim of this repository is to introduce some of the more basic features of Sn
 
 ## The exercise
 
-Sint wants to deliver 10 million packages to households in the Netherlands, using his Pieten to distribute them. Unfortunately, Sint has an authority problem; the Pieten think Sint has run the show for long enough and though they agree to distribute the packages, numbered 0 to 9999999, this time it will be on their terms. These are their terms:
+Sint wants to deliver 10 million packages to households in the Netherlands, using his Pieten to distribute them. Unfortunately, Sint has an authority problem; the Pieten think Sint has run the show for long enough and though they agree to distribute the packages, numbered 0 to 9999999, this time it will be on their terms. They will deliver the packages in this order and under their terms:
 
 - Atom Piet: Only indivisable (prime) numbers
 - Professor Piet: only numbers that end with a three

@@ -1,26 +1,36 @@
-# Sieve of Eratosthenes prime computation with SnakeMake
+# Programming café: snakemake exercises
 
-This repository is a template for computing the primes up to any number (given enough time and memory). This is done using the Sieve of Eratosthenes algorithm see [Wikipedia](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes). The aim of this repository is to introduce some of the more basic features of SnakeMake. The `Snakefile` file is incomplete and the exercise is to complete it to find the primes. Documentation for snakemake on writing rules is available [here](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html).
+The aim of this repository is to introduce some of the more basic features of SnakeMake. The `Snakefile` file is incomplete and the exercise is to complete it to find the primes. Documentation for snakemake on writing rules is available [here](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html).
+
+## The exercise
+
+Sint wants to deliver 10 million packages to households in the Netherlands, using his Pieten to distribute them. Unfortunately, Sint has an authority problem; the Pieten think Sint has run the show for long enough and though they agree to distribute the packages, numbered 0 to 9999999, this time it will be on their terms. These are their terms:
+
+- Atom Piet: Only indivisable (prime) numbers
+- Professor Piet: only numbers that end with a three
+- Average Piet: only numbers with average decimal of 5
+- Drunk Piet: only numbers with consecutive repeated decimals
+- Astrology Piet: only numbers that do not have a 9 in them
+- Lazy Piet: everything else, but he dumps the presents in the canal
+
+How big is the pile of packages in the canal?
 
 ## Overview of the repository
 
-- `bruteforce.py $max_prime $out_file`: Compute the primes in the most bruteforce way.
-- `small_primes.py $max_prime $out_file`: Compute primes in a slightly less bruteforce way.
-- `segmented_primes.py $small_primes_file $start_segment $end_segment $out_file`: Compute primes with Erathosthenes seive, but over a segment.
-- `aggregate_primes.py $segment_dir $out_file`: Aggregate the segments into a single file.
-- `plot_primes.py $primes_file`: Plot the prime density.
+- `src/create_packages.py`: Create packages for delivery.
+- `src/deliver_packages.py`: Deliver (part of the) packages.
+- `src/count_remaining.py`: Count how many packages were delivered.
 - `Snakefile`: The workflow file that you need to edit.
 - `defaults.yaml`: A file with default max_prime and segments.
-- `run_workflow_bash.sh`: This file is how the workflow looks like in bash without parallelization.
 
 ## Steps into getting a working workflow
 
 ### Step 1: Install Snakemake
 
-It is recommended to install snakemake into a conda environment, although snakemake will also work with a native Python installation. Installation instruction are on the Snakemake [website](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html). In addition install matplot:
+It is recommended to install snakemake into a conda environment, although snakemake will also work with a native Python installation. Installation instruction are on the Snakemake [website](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html). In addition install numpy:
 
 ```sh
-conda install matplotlib numpy
+conda install numpy
 ```
 
 ### Step 2: Copy/clone this repository
@@ -33,10 +43,8 @@ The `Snakefile` is similar to a `Makefile` for those familiar with it. There is 
 
 ### Step 4: Run the workflow
 
-To run the workflow for a maximum prime of 1 million with 4 cores, type the following on the command line:
+To run the workflow type the following on the command line:
 
 ```sh
-snakemake --cores 4 --config max_prime=1000000
+snakemake --cores 4
 ```
-
-The results should be in the directory that you have chosen (`density.png`)

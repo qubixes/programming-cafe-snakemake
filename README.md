@@ -13,13 +13,13 @@ Sint wants to deliver 10 million packages to households in the Netherlands, usin
 - Astrology Piet: only numbers that do not have a 9 in them
 - Lazy Piet: everything else, but he dumps the presents in the canal
 
-How big is the pile of packages in the canal?
+How big is the pile of packages in the canal? Do the computation in parallel.
 
 ## Overview of the repository
 
-- `src/create_packages.py`: Create packages for delivery.
-- `src/deliver_packages.py`: Deliver (part of the) packages.
-- `src/count_remaining.py`: Count how many packages were delivered.
+- `src/create_packages.py $segment_id $segment_size $file_out`: Create packages for delivery.
+- `src/deliver_packages.py $segment_id $file_in $file_out $method`: Deliver (part of the) packages, methods are 'prime', 'end_three', 'average_five', 'repeat', 'nine'.
+- `src/count_remaining.py $in_file1 $in_file2 ... $out_file`: Count how many packages were delivered.
 - `Snakefile`: The workflow file that you need to edit.
 - `defaults.yaml`: A file with default max_prime and segments.
 
